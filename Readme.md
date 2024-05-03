@@ -27,30 +27,26 @@ type Message struct {
 }
 ```
 
-### Sending a Message
+### Sending a Message, Broadcasting a message to all the remaining users, and Checking user logs!
 The `sendMessage` function allows users to send messages between two users. It validates user inputs for sender ID, receiver ID, and message content. If the message content is empty, it fetches a random fact from an API.
+
+The `broadcastMessage` function allows users to broadcast a message to all users except the sender. It validates the sender ID and message content.
+
+The `viewMessageLog` function allows users to view the message log of a specific user. It validates the user ID and prints the message log.
+
+### Handling the invalid user input!
 
 ```go
 func sendMessage(reader *bufio.Reader) {
-    // Input validation and error handling
-}
-```
+    ...
+	
+	//error handling for invalid input for a user!
 
-### Broadcasting a Message
-The `broadcastMessage` function allows users to broadcast a message to all users except the sender. It validates the sender ID and message content.
-
-```go
-func broadcastMessage(reader *bufio.Reader) {
-    // Input validation and error handling
-}
-```
-
-### Viewing Message Logs
-The `viewMessageLog` function allows users to view the message log of a specific user. It validates the user ID and prints the message log.
-
-```go
-func viewMessageLog(reader *bufio.Reader) {
-    // Input validation and error handling
+	if _, ok := users[receiverID]; !ok {
+		fmt.Println("Receiver ID does not exist.")
+		return
+	}
+    ...
 }
 ```
 
@@ -83,7 +79,7 @@ func getRandomFact() string {
 ## Error Handling
 The application performs error handling and input validation in various parts:
 - Validating user inputs for sender ID, receiver ID, and user ID.
-- Handling errors during conversion of user inputs to integers.
+- Handling errors during the conversion of user inputs to integers.
 - Handling errors during HTTP requests to fetch random facts from the API.
 - Handling errors during decoding of the JSON response from the API.
   
@@ -112,7 +108,7 @@ The application performs error handling and input validation in various parts:
 > user does NOT exist -> return error message(keep the loop running)
 ![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/7317d503-dbe4-49f8-ae60-814f561dac47)
 
-> what if the input is UNVALID(say user ID is a string?)
+> what if the input is INVALID (say user ID is a string?)
 ![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/586c98bf-28ed-4e92-88f7-76a4b8504ba1)
 
 > #### At last we exit the program and see all the user logs, all at once! :)
