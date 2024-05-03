@@ -2,6 +2,7 @@
 ## Assignment by MyMandap - Submitted by PritpalSingh(aka ppcodes)
 
 This is a simple command-line interface (CLI) messaging application written in Go. It allows users to send messages between each other, broadcast messages to all users, and view message logs.
+You can run this on replit as well, [here](https://replit.com/@pritpalsingh020/ViciousConsiderateTransversal).
 
 ## Key Components
 
