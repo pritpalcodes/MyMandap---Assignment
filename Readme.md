@@ -1,8 +1,5 @@
-Sure, here's a suggested structure for your `README.md` file:
-
----
-
-# CLI Messaging App
+# CLI Messaging App 
+## Assignment by MyMandap - Submitted by PritpalSingh(aka ppcodes)
 
 This is a simple command-line interface (CLI) messaging application written in Go. It allows users to send messages between each other, broadcast messages to all users, and view message logs.
 
@@ -57,11 +54,28 @@ func viewMessageLog(reader *bufio.Reader) {
 ```
 
 ### Fetching Random Facts
-The `getRandomFact` function fetches a random fact from an API (`https://catfact.ninja/fact`). It handles errors during the API call and decoding of the response.
+The `getRandomFact` function fetches a random fact from an API (`https://catfact.ninja/fact`). It handles errors during the API call and decoding of the response. Implementing this was the favourite part of the assignment.
 
 ```go
 func getRandomFact() string {
-    // API call and error handling
+    url := "https://catfact.ninja/fact"
+	resp, err := http.Get(url)
+	if err != nil {
+		return "Failed to fetch random fact"
+	}
+	defer resp.Body.Close()
+
+	var factResp map[string]string
+	if err := json.NewDecoder(resp.Body).Decode(&factResp); err != nil {
+		return "Failed to decode random fact response"
+	}
+
+	fact, ok := factResp["fact"]
+	if !ok {
+		return "Failed to get random fact"
+	}
+
+	return fact
 }
 ```
 
@@ -71,20 +85,10 @@ The application performs error handling and input validation in various parts:
 - Handling errors during conversion of user inputs to integers.
 - Handling errors during HTTP requests to fetch random facts from the API.
 - Handling errors during decoding of the JSON response from the API.
-
-## How API is Called and Used
-The `getRandomFact` function makes an HTTP GET request to the "https://catfact.ninja/fact" API endpoint to fetch a random fact. It then decodes the JSON response and extracts the fact.
-
-```go
-func getRandomFact() string {
-    // API call and error handling
-}
-```
+  
 
 ## Demo
 
-[Include demonstration of the application usage here]
 
----
 
-You can replace the placeholder text with actual content and examples. Make sure to provide clear instructions on how to use the application and include any additional information that might be helpful for users.
+If you liked this assignment, you can also check out my other assignments on [my GitHub](https://github.com/pritpal-singh) or on my [website](https://pritpalsingh.in).
