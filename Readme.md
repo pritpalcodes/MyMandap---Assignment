@@ -90,6 +90,33 @@ The application performs error handling and input validation in various parts:
 
 ## Demo
 
+### testing regular options
+> testing out the option-1 (send message between two users!)
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/9b8307fd-f07c-487b-96db-2625ddb3d46a)
+
+> option 3, whereby our user 2 is checking its logs, and see the message sent by user 1 earlier!
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/0d1d7ddc-3825-4b30-8afd-97bd43e91814)
+
+> finally, option 2, broadcasting a message! (here uesr 3 broadcasts a message to all the remaining users)
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/1757eb36-d965-4696-9414-168f7070e7dd)
+
+> checking the broadcast so received!
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/05703521-f325-49ef-8816-e9328be69216)
+
+> If empty message -> generate a random fact!
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/246ca102-9744-4601-b396-30fa6b201161)
+
+
+
+### testing for error handling
+> user does NOT exist -> return error message(keep the loop running)
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/7317d503-dbe4-49f8-ae60-814f561dac47)
+
+> what if the input is UNVALID(say user ID is a string?)
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/586c98bf-28ed-4e92-88f7-76a4b8504ba1)
+
+> #### At last we exit the program and see all the user logs, all at once! :)
+![image](https://github.com/pritpalcodes/MyMandap---Assignment/assets/90276050/2f5da723-c31d-45d9-9794-9cb71dd4e3ff)
 
 
 If you liked this assignment, you can also check out my other assignments on [my GitHub](https://github.com/pritpal-singh) or on my [website](https://pritpalsingh.in).
